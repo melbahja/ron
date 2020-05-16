@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+
+ron build linux
+ron build macos
+ron build windows
