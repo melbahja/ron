@@ -20,7 +20,7 @@ type (
 var flags = []cli.Flag{
 	&cli.StringFlag{
 		Name:  "dir",
-		Usage: "Woring directory `path`",
+		Usage: "Working directory `path`",
 		Value: os.ExpandEnv("$PWD"),
 	},
 	&cli.BoolFlag{
@@ -32,8 +32,8 @@ var flags = []cli.Flag{
 func main() {
 
 	app := &cli.App{
-		Name:                 "ron",
-		Usage:                "the simple task runner.",
+		Name:                 "Ron",
+		Usage:                "The simple task runner.",
 		Flags:                flags,
 		Action:               handle,
 		BashComplete:         complete,
