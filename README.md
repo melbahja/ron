@@ -80,11 +80,6 @@ _ron_bash_autocomplete() {
 complete -F _ron_bash_autocomplete ron
 ```
 
-
-## Examples
-
-See [Examples](https://github.com/melbahja/ssh/blob/master/examples).
-
 ## License
 
 Ron is provided under the [MIT License](https://github.com/melbahja/ron/blob/master/LICENSE).
