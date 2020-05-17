@@ -8,7 +8,7 @@
 <p align="center">
     <a href="#installation">Installation</a> ❘
     <a href="#usage">Usage</a> ❘
-    <a href="#examples">Bash Autocomplete</a> ❘
+    <a href="#bash-autocomplete">Bash Autocomplete</a> ❘
     <a href="#license">License</a>
 </p>
 
