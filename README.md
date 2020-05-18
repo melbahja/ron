@@ -15,7 +15,27 @@
 
 ## Installation
 
-Visit [releases](https://github.com/melbahja/ron/releases) page and download latest version, or you can `go get github.com/melbahja/ron`.
+Start by download latest version for your OS:
+```bash
+# Linux
+curl -fSL https://github.com/melbahja/ron/releases/latest/download/ron_linux -o ron
+
+
+# MacOS
+curl -fSL https://github.com/melbahja/ron/releases/latest/download/ron_macos -o ron
+
+
+# Windows
+curl -fSL https://github.com/melbahja/ron/releases/latest/download/ron_windows.exe -o ron.exe
+```
+
+Then make the binary executable and move it to bin path:
+```bash
+chmod +x ron
+sudo mv ron /usr/bin/ron
+```
+
+for Gophers you can `go get github.com/melbahja/ron`.
 
 ## Usage
 
