@@ -17,25 +17,35 @@ type (
 	}
 )
 
-var flags = []cli.Flag{
-	&cli.StringFlag{
-		Name:  "dir",
-		Usage: "Working directory `path`",
-		Value: os.ExpandEnv("$PWD"),
-	},
-	&cli.BoolFlag{
-		Name:  "dry",
-		Usage: "Show the file that will be executed",
-	},
-}
+var (
+	ver   string
+	flags = []cli.Flag{
+		&cli.StringFlag{
+			Name:  "dir",
+			Usage: "Working directory `path`",
+			Value: os.ExpandEnv("$PWD"),
+		},
+		&cli.BoolFlag{
+			Name:  "dry",
+			Usage: "Show the file that will be executed",
+		},
+	}
+)
 
 func main() {
 
 	app := &cli.App{
-		Name:                 "Ron",
-		Usage:                "The simple task runner.",
-		Flags:                flags,
-		Action:               handle,
+		Name:    "Ron",
+		Usage:   "The simple task runner.",
+		Version: ver,
+		Flags:   flags,
+		Action:  handle,
+		Authors: []*cli.Author{
+			{
+				Name:  "Mohamed Elbahja",
+				Email: "bm9qdW5r@gmail.com",
+			},
+		},
 		BashComplete:         complete,
 		EnableBashCompletion: true,
 	}
