@@ -1,29 +1,30 @@
-name: Go
+name: Build and test Go
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-
-  test:
-    name: Test
+  build_test:
+    name: Build and test
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Go 1.13
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.13
 
-    - name: Set up Go 1.x
-      uses: actions/setup-go@v2
-      with:
-        go-version: ^1.13
-      id: go
+      - name: Check out source code
+        uses: actions/checkout@v1
 
-    - name: Check out code into the Go module directory
-      uses: actions/checkout@v2
+      - name: Build
+        env:
+          GOPROXY: "https://proxy.golang.org"
+        run: go build .
 
-    - name: Get dependencies
-      run: go mod download
-
-    - name: Test
-      run: go test -v .
+      - name: Test
+        env:
+          GOPROXY: "https://proxy.golang.org"
+        run: go test -v .
