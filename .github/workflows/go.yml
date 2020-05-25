@@ -22,9 +22,9 @@ jobs:
       - name: Build
         env:
           GOPROXY: "https://proxy.golang.org"
-        run: go run ron.go build linux
+        run: cd .. && go run ron.go build linux
 
       - name: Test
         env:
           GOPROXY: "https://proxy.golang.org"
-        run: go test
+        run: cd .. && go test
