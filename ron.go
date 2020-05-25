@@ -115,11 +115,12 @@ func getCmd(dir string, args []string) (*Command, error) {
 
 func complete(c *cli.Context) {
 
-	if c.NArg() > 0 {
-		return
+	dir := fmt.Sprintf("%s/.ron/%s", c.String("dir"), strings.Join(c.Args().Slice(), "/"))
+
+	if strings.HasSuffix(dir, "/") == false {
+		dir += "/"
 	}
 
-	dir := fmt.Sprintf("%s/.ron/", c.String("dir"))
 	files, err := filepath.Glob(fmt.Sprintf("%s*", dir))
 	check(err)
 
